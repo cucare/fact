@@ -2,7 +2,7 @@
 
 
 //======================================================================
-$( function() {
+$(function(){
 	
 	$("#user-del").on('click', function(e){
 		
@@ -28,34 +28,9 @@ $( function() {
 
 		
 		
-	} );
+	});
 	
-    function refreshSwatch() {
-		
-      var red = cc($( "#red" ).slider( "value" )),
-        green = cc($( "#green" ).slider( "value" )),
-        blue = cc($( "#blue" ).slider( "value" ));
-        
-        message = "980079"+red+green+blue;
-        ready_message = true;
-    }
- 
-    $( "#red, #green, #blue" ).slider({
-      orientation: "horizontal",
-      range: "min",
-      min: 0,
-      max: 255,
-      step: 1,
-      //value: 50,
-      slide: refreshSwatch,
-      change: refreshSwatch
-    });
-    
-    $( "#red" ).slider( "value", 2 );
-    $( "#green" ).slider( "value", 0 );
-    $( "#blue" ).slider( "value", 1 );
-  } 
-);
+});
 
 //======================================================================
 function get_users(mode)

@@ -1,0 +1,11 @@
+table { width: 50% }
+
+td { width: 25%; padding-left: 10px; padding-right: 10px; }
+
+td.check { text-align: center; }
+
+#users td {}
+
+.user-archive { text-decoration: line-through; }
+
+.email-not-confirmed { font-style: italic; color: grey; }

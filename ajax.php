@@ -18,7 +18,7 @@ switch($_REQUEST['req']) // селектор запросов
 		$sql = 'SELECT usr_id AS id, usr_name AS name, usr_passwd AS passwd, eml_name AS email, eml_flag_confirmed AS confirmed
 			FROM user 
 			LEFT JOIN email ON usr_id = eml_usr_id 
-			WHERE usr_flag_archive = 0
+			WHERE usr_flag_archive = 0 AND eml_flag_primary = 1
 			ORDER BY usr_name';
 	break;
 	
@@ -26,6 +26,7 @@ switch($_REQUEST['req']) // селектор запросов
 		$sql = 'SELECT usr_id AS id, usr_name AS name, usr_passwd AS passwd, eml_name AS email, usr_flag_archive AS archive, eml_flag_confirmed AS confirmed 
 			FROM user 
 			LEFT JOIN email ON usr_id = eml_usr_id 
+			WHERE eml_flag_primary = 1
 			ORDER BY usr_name';
 	break;
 

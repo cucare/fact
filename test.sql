@@ -6,7 +6,7 @@ create table user(
 	usr_id				int	auto_increment	not null primary key,
 	usr_name			varchar(60) not null,
 	usr_passwd			varchar(60) not null,
-	usr_flag_archive	tinyint not null default 0
+	usr_flag_archive	tinyint not null default 0 -- флаг удаленного пользователя
 	);
 	
 insert into user(usr_name, usr_passwd) values('qwerty', 'k3h5');
@@ -17,12 +17,13 @@ insert into user(usr_name, usr_passwd) values('zxcvbn', '12hgj');
 
 drop table if exists email;
 
+-- отдельная таблица для возможности нескольких email
 create table email(
 	eml_id				int	auto_increment	not null primary key,
-	eml_usr_id			int not null,
+	eml_usr_id			int not null, -- id пользователя
 	eml_name			varchar(60) not null,
-	eml_flag_primary	tinyint not null default 1,
-	eml_flag_confirmed	tinyint not null default 0
+	eml_flag_primary	tinyint not null default 1, -- флаг основного email
+	eml_flag_confirmed	tinyint not null default 0 -- флаг подтвержденного email
 );
 	
 insert into email(eml_usr_id, eml_name) values(1, 'ok@gmail.com');
